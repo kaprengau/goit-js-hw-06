@@ -26,6 +26,6 @@ const galleryElItem = ({ url, alt }) => {
   return imagesItem;
 };
 
-const galleryArr = images.map((el) => galleryElItem(el));
+const galleryArr = images.map(galleryElItem);
 
 gallery.insertAdjacentHTML("afterbegin", galleryArr.join(""));

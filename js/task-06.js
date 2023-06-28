@@ -1,18 +1,18 @@
 const ValidatorInput = document.querySelector("#validation-input");
 
-const onInputCheck = ({ target }) => {
-  const findLength = parseInt(target.dataset.length);
-  const inputLength = target.value.length;
+const onInputCheck = ({ target: { value, classList, dataset } }) => {
+  const findLength = parseInt(dataset.length);
+  const inputLength = value.length;
 
   console.log(findLength);
   console.log(inputLength);
 
   if (findLength === inputLength) {
-    target.classList.add("valid");
-    target.classList.remove("invalid");
+    classList.remove("invalid");
+    classList.add("valid");
   } else {
-    target.classList.add("invalid");
-    target.classList.remove("valid");
+    classList.add("invalid");
+    classList.remove("valid");
   }
 };
 
